@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "FindAFriend API é um conjunto de serviços para a adoção de animais, implementando SOLID, Teste Unitários e Testes End-to-End",
   "main": "build/server.js",
+  "engines": {
+    "node": "22.14.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup src/server.ts --out-dir build",
+    "start": "node build/server.js"
   },
   "repository": {
     "type": "git",
