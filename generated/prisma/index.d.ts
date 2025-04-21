@@ -1012,38 +1012,35 @@ export namespace Prisma {
 
   export type PetMinAggregateOutputType = {
     id: string | null
+    ownerId: string | null
     name: string | null
     description: string | null
     age: number | null
-    species: string | null
     breed: string | null
     color: string | null
     size: string | null
-    ownerId: string | null
   }
 
   export type PetMaxAggregateOutputType = {
     id: string | null
+    ownerId: string | null
     name: string | null
     description: string | null
     age: number | null
-    species: string | null
     breed: string | null
     color: string | null
     size: string | null
-    ownerId: string | null
   }
 
   export type PetCountAggregateOutputType = {
     id: number
+    ownerId: number
     name: number
     description: number
     age: number
-    species: number
     breed: number
     color: number
     size: number
-    ownerId: number
     _all: number
   }
 
@@ -1058,38 +1055,35 @@ export namespace Prisma {
 
   export type PetMinAggregateInputType = {
     id?: true
+    ownerId?: true
     name?: true
     description?: true
     age?: true
-    species?: true
     breed?: true
     color?: true
     size?: true
-    ownerId?: true
   }
 
   export type PetMaxAggregateInputType = {
     id?: true
+    ownerId?: true
     name?: true
     description?: true
     age?: true
-    species?: true
     breed?: true
     color?: true
     size?: true
-    ownerId?: true
   }
 
   export type PetCountAggregateInputType = {
     id?: true
+    ownerId?: true
     name?: true
     description?: true
     age?: true
-    species?: true
     breed?: true
     color?: true
     size?: true
-    ownerId?: true
     _all?: true
   }
 
@@ -1181,14 +1175,13 @@ export namespace Prisma {
 
   export type PetGroupByOutputType = {
     id: string
+    ownerId: string
     name: string
     description: string
     age: number
-    species: string
     breed: string
     color: string
     size: string
-    ownerId: string
     _count: PetCountAggregateOutputType | null
     _avg: PetAvgAggregateOutputType | null
     _sum: PetSumAggregateOutputType | null
@@ -1212,56 +1205,52 @@ export namespace Prisma {
 
   export type PetSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    ownerId?: boolean
     name?: boolean
     description?: boolean
     age?: boolean
-    species?: boolean
     breed?: boolean
     color?: boolean
     size?: boolean
-    ownerId?: boolean
     owner?: boolean | OrgDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["pet"]>
 
   export type PetSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    ownerId?: boolean
     name?: boolean
     description?: boolean
     age?: boolean
-    species?: boolean
     breed?: boolean
     color?: boolean
     size?: boolean
-    ownerId?: boolean
     owner?: boolean | OrgDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["pet"]>
 
   export type PetSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    ownerId?: boolean
     name?: boolean
     description?: boolean
     age?: boolean
-    species?: boolean
     breed?: boolean
     color?: boolean
     size?: boolean
-    ownerId?: boolean
     owner?: boolean | OrgDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["pet"]>
 
   export type PetSelectScalar = {
     id?: boolean
+    ownerId?: boolean
     name?: boolean
     description?: boolean
     age?: boolean
-    species?: boolean
     breed?: boolean
     color?: boolean
     size?: boolean
-    ownerId?: boolean
   }
 
-  export type PetOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "age" | "species" | "breed" | "color" | "size" | "ownerId", ExtArgs["result"]["pet"]>
+  export type PetOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "ownerId" | "name" | "description" | "age" | "breed" | "color" | "size", ExtArgs["result"]["pet"]>
   export type PetInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     owner?: boolean | OrgDefaultArgs<ExtArgs>
   }
@@ -1279,14 +1268,13 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      ownerId: string
       name: string
       description: string
       age: number
-      species: string
       breed: string
       color: string
       size: string
-      ownerId: string
     }, ExtArgs["result"]["pet"]>
     composites: {}
   }
@@ -1712,14 +1700,13 @@ export namespace Prisma {
    */
   interface PetFieldRefs {
     readonly id: FieldRef<"Pet", 'String'>
+    readonly ownerId: FieldRef<"Pet", 'String'>
     readonly name: FieldRef<"Pet", 'String'>
     readonly description: FieldRef<"Pet", 'String'>
     readonly age: FieldRef<"Pet", 'Int'>
-    readonly species: FieldRef<"Pet", 'String'>
     readonly breed: FieldRef<"Pet", 'String'>
     readonly color: FieldRef<"Pet", 'String'>
     readonly size: FieldRef<"Pet", 'String'>
-    readonly ownerId: FieldRef<"Pet", 'String'>
   }
     
 
@@ -3298,14 +3285,13 @@ export namespace Prisma {
 
   export const PetScalarFieldEnum: {
     id: 'id',
+    ownerId: 'ownerId',
     name: 'name',
     description: 'description',
     age: 'age',
-    species: 'species',
     breed: 'breed',
     color: 'color',
-    size: 'size',
-    ownerId: 'ownerId'
+    size: 'size'
   };
 
   export type PetScalarFieldEnum = (typeof PetScalarFieldEnum)[keyof typeof PetScalarFieldEnum]
@@ -3399,27 +3385,25 @@ export namespace Prisma {
     OR?: PetWhereInput[]
     NOT?: PetWhereInput | PetWhereInput[]
     id?: StringFilter<"Pet"> | string
+    ownerId?: StringFilter<"Pet"> | string
     name?: StringFilter<"Pet"> | string
     description?: StringFilter<"Pet"> | string
     age?: IntFilter<"Pet"> | number
-    species?: StringFilter<"Pet"> | string
     breed?: StringFilter<"Pet"> | string
     color?: StringFilter<"Pet"> | string
     size?: StringFilter<"Pet"> | string
-    ownerId?: StringFilter<"Pet"> | string
     owner?: XOR<OrgScalarRelationFilter, OrgWhereInput>
   }
 
   export type PetOrderByWithRelationInput = {
     id?: SortOrder
+    ownerId?: SortOrder
     name?: SortOrder
     description?: SortOrder
     age?: SortOrder
-    species?: SortOrder
     breed?: SortOrder
     color?: SortOrder
     size?: SortOrder
-    ownerId?: SortOrder
     owner?: OrgOrderByWithRelationInput
   }
 
@@ -3428,27 +3412,25 @@ export namespace Prisma {
     AND?: PetWhereInput | PetWhereInput[]
     OR?: PetWhereInput[]
     NOT?: PetWhereInput | PetWhereInput[]
+    ownerId?: StringFilter<"Pet"> | string
     name?: StringFilter<"Pet"> | string
     description?: StringFilter<"Pet"> | string
     age?: IntFilter<"Pet"> | number
-    species?: StringFilter<"Pet"> | string
     breed?: StringFilter<"Pet"> | string
     color?: StringFilter<"Pet"> | string
     size?: StringFilter<"Pet"> | string
-    ownerId?: StringFilter<"Pet"> | string
     owner?: XOR<OrgScalarRelationFilter, OrgWhereInput>
   }, "id">
 
   export type PetOrderByWithAggregationInput = {
     id?: SortOrder
+    ownerId?: SortOrder
     name?: SortOrder
     description?: SortOrder
     age?: SortOrder
-    species?: SortOrder
     breed?: SortOrder
     color?: SortOrder
     size?: SortOrder
-    ownerId?: SortOrder
     _count?: PetCountOrderByAggregateInput
     _avg?: PetAvgOrderByAggregateInput
     _max?: PetMaxOrderByAggregateInput
@@ -3461,14 +3443,13 @@ export namespace Prisma {
     OR?: PetScalarWhereWithAggregatesInput[]
     NOT?: PetScalarWhereWithAggregatesInput | PetScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Pet"> | string
+    ownerId?: StringWithAggregatesFilter<"Pet"> | string
     name?: StringWithAggregatesFilter<"Pet"> | string
     description?: StringWithAggregatesFilter<"Pet"> | string
     age?: IntWithAggregatesFilter<"Pet"> | number
-    species?: StringWithAggregatesFilter<"Pet"> | string
     breed?: StringWithAggregatesFilter<"Pet"> | string
     color?: StringWithAggregatesFilter<"Pet"> | string
     size?: StringWithAggregatesFilter<"Pet"> | string
-    ownerId?: StringWithAggregatesFilter<"Pet"> | string
   }
 
   export type OrgWhereInput = {
@@ -3561,7 +3542,6 @@ export namespace Prisma {
     name: string
     description: string
     age: number
-    species: string
     breed: string
     color: string
     size: string
@@ -3570,14 +3550,13 @@ export namespace Prisma {
 
   export type PetUncheckedCreateInput = {
     id?: string
+    ownerId: string
     name: string
     description: string
     age: number
-    species: string
     breed: string
     color: string
     size: string
-    ownerId: string
   }
 
   export type PetUpdateInput = {
@@ -3585,7 +3564,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     age?: IntFieldUpdateOperationsInput | number
-    species?: StringFieldUpdateOperationsInput | string
     breed?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
     size?: StringFieldUpdateOperationsInput | string
@@ -3594,26 +3572,24 @@ export namespace Prisma {
 
   export type PetUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    ownerId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     age?: IntFieldUpdateOperationsInput | number
-    species?: StringFieldUpdateOperationsInput | string
     breed?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
     size?: StringFieldUpdateOperationsInput | string
-    ownerId?: StringFieldUpdateOperationsInput | string
   }
 
   export type PetCreateManyInput = {
     id?: string
+    ownerId: string
     name: string
     description: string
     age: number
-    species: string
     breed: string
     color: string
     size: string
-    ownerId: string
   }
 
   export type PetUpdateManyMutationInput = {
@@ -3621,7 +3597,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     age?: IntFieldUpdateOperationsInput | number
-    species?: StringFieldUpdateOperationsInput | string
     breed?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
     size?: StringFieldUpdateOperationsInput | string
@@ -3629,14 +3604,13 @@ export namespace Prisma {
 
   export type PetUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    ownerId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     age?: IntFieldUpdateOperationsInput | number
-    species?: StringFieldUpdateOperationsInput | string
     breed?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
     size?: StringFieldUpdateOperationsInput | string
-    ownerId?: StringFieldUpdateOperationsInput | string
   }
 
   export type OrgCreateInput = {
@@ -3774,14 +3748,13 @@ export namespace Prisma {
 
   export type PetCountOrderByAggregateInput = {
     id?: SortOrder
+    ownerId?: SortOrder
     name?: SortOrder
     description?: SortOrder
     age?: SortOrder
-    species?: SortOrder
     breed?: SortOrder
     color?: SortOrder
     size?: SortOrder
-    ownerId?: SortOrder
   }
 
   export type PetAvgOrderByAggregateInput = {
@@ -3790,26 +3763,24 @@ export namespace Prisma {
 
   export type PetMaxOrderByAggregateInput = {
     id?: SortOrder
+    ownerId?: SortOrder
     name?: SortOrder
     description?: SortOrder
     age?: SortOrder
-    species?: SortOrder
     breed?: SortOrder
     color?: SortOrder
     size?: SortOrder
-    ownerId?: SortOrder
   }
 
   export type PetMinOrderByAggregateInput = {
     id?: SortOrder
+    ownerId?: SortOrder
     name?: SortOrder
     description?: SortOrder
     age?: SortOrder
-    species?: SortOrder
     breed?: SortOrder
     color?: SortOrder
     size?: SortOrder
-    ownerId?: SortOrder
   }
 
   export type PetSumOrderByAggregateInput = {
@@ -4116,7 +4087,6 @@ export namespace Prisma {
     name: string
     description: string
     age: number
-    species: string
     breed: string
     color: string
     size: string
@@ -4127,7 +4097,6 @@ export namespace Prisma {
     name: string
     description: string
     age: number
-    species: string
     breed: string
     color: string
     size: string
@@ -4164,14 +4133,13 @@ export namespace Prisma {
     OR?: PetScalarWhereInput[]
     NOT?: PetScalarWhereInput | PetScalarWhereInput[]
     id?: StringFilter<"Pet"> | string
+    ownerId?: StringFilter<"Pet"> | string
     name?: StringFilter<"Pet"> | string
     description?: StringFilter<"Pet"> | string
     age?: IntFilter<"Pet"> | number
-    species?: StringFilter<"Pet"> | string
     breed?: StringFilter<"Pet"> | string
     color?: StringFilter<"Pet"> | string
     size?: StringFilter<"Pet"> | string
-    ownerId?: StringFilter<"Pet"> | string
   }
 
   export type PetCreateManyOwnerInput = {
@@ -4179,7 +4147,6 @@ export namespace Prisma {
     name: string
     description: string
     age: number
-    species: string
     breed: string
     color: string
     size: string
@@ -4190,7 +4157,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     age?: IntFieldUpdateOperationsInput | number
-    species?: StringFieldUpdateOperationsInput | string
     breed?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
     size?: StringFieldUpdateOperationsInput | string
@@ -4201,7 +4167,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     age?: IntFieldUpdateOperationsInput | number
-    species?: StringFieldUpdateOperationsInput | string
     breed?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
     size?: StringFieldUpdateOperationsInput | string
@@ -4212,7 +4177,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     age?: IntFieldUpdateOperationsInput | number
-    species?: StringFieldUpdateOperationsInput | string
     breed?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
     size?: StringFieldUpdateOperationsInput | string

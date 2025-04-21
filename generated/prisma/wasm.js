@@ -119,14 +119,13 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.PetScalarFieldEnum = {
   id: 'id',
+  ownerId: 'ownerId',
   name: 'name',
   description: 'description',
   age: 'age',
-  species: 'species',
   breed: 'breed',
   color: 'color',
-  size: 'size',
-  ownerId: 'ownerId'
+  size: 'size'
 };
 
 exports.Prisma.OrgScalarFieldEnum = {

@@ -10,15 +10,14 @@ datasource db {
 
 model Pet {
   id          String @id @default(uuid())
+  ownerId     String
   name        String
   description String
   age         Int
-  species     String
   breed       String
   color       String
   size        String
   owner       Org    @relation(fields: [ownerId], references: [id])
-  ownerId     String
 
   @@map("pets")
 }
