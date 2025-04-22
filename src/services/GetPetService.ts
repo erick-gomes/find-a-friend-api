@@ -2,9 +2,7 @@ import type { PetsRepository } from '@/repositories/PetsRepository'
 import { PetNotFoundError } from '@/services/errors/PetNotFoundError'
 import type { Pet } from '@prisma/client'
 
-interface GetPetServiceRequest {
-	id: Pet['id']
-}
+interface GetPetServiceRequest extends Pick<Pet, 'id'> {}
 
 interface GetPetServiceResponse {
 	pet: Pet
