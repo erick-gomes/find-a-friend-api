@@ -9,10 +9,6 @@
 		"ignoreUnknown": false,
 		"ignore": []
 	},
-	"formatter": {
-		"enabled": true,
-		"indentStyle": "tab"
-	},
 	"organizeImports": {
 		"enabled": true
 	},
@@ -25,7 +21,9 @@
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "single",
-			"semicolons": "asNeeded"
+			"semicolons": "asNeeded",
+			"indentWidth": 4,
+			"indentStyle": "tab"
 		}
 	}
 }
