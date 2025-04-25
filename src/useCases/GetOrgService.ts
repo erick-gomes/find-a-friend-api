@@ -1,5 +1,5 @@
 import type { OrgsRepository } from '@/repositories/OrgsRepository'
-import { OrgNotFoundError } from '@/services/errors/OrgNotFoundError'
+import { OrgNotFoundError } from '@/useCases/errors/OrgNotFoundError'
 import type { Org } from '@prisma/client'
 
 interface GetOrgServiceRequest {

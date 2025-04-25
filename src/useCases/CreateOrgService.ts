@@ -1,6 +1,6 @@
 import type { OrgsRepository } from '@/repositories/OrgsRepository'
+import { OrgAlreadyExistsError } from '@/useCases/errors/OrgAlreadyExistsError'
 import type { Org, Prisma } from '@prisma/client'
-import { OrgAlreadyExistsError } from '@/services/errors/OrgAlreadyExistsError'
 import { hash } from 'bcrypt'
 
 interface CreateOrgServiceRequest

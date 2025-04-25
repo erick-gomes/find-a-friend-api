@@ -1,6 +1,6 @@
 import type { PetsRepository } from '@/repositories/PetsRepository'
+import { OrgNotFoundError } from '@/useCases/errors/OrgNotFoundError'
 import type { Pet, Prisma } from '@prisma/client'
-import { OrgNotFoundError } from '@/services/errors/OrgNotFoundError'
 
 interface CreatePetServiceRequest
 	extends Omit<Prisma.PetUncheckedCreateInput, 'id'> {}
