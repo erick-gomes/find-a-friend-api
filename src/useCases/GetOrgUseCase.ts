@@ -2,20 +2,20 @@ import type { OrgsRepository } from '@/repositories/OrgsRepository'
 import { OrgNotFoundError } from '@/useCases/errors/OrgNotFoundError'
 import type { Org } from '@prisma/client'
 
-interface GetOrgServiceRequest {
+interface GetOrgUseCaseRequest {
 	id: Org['id']
 }
 
-interface GetOrgServiceResponse {
+interface GetOrgUseCaseResponse {
 	org: Org
 }
 
-export class GetOrgService {
+export class GetOrgUseCase {
 	constructor(private orgsRepository: OrgsRepository) {}
 
 	async execute({
 		id,
-	}: GetOrgServiceRequest): Promise<GetOrgServiceResponse> {
+	}: GetOrgUseCaseRequest): Promise<GetOrgUseCaseResponse> {
 		const org = await this.orgsRepository.findById({ id })
 
 		if (!org) {

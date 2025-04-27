@@ -2,18 +2,18 @@ import type { PetsRepository } from '@/repositories/PetsRepository'
 import { PetNotFoundError } from '@/useCases/errors/PetNotFoundError'
 import type { Pet } from '@prisma/client'
 
-interface GetPetServiceRequest extends Pick<Pet, 'id'> {}
+interface GetPetUseCaseRequest extends Pick<Pet, 'id'> {}
 
-interface GetPetServiceResponse {
+interface GetPetUseCaseResponse {
 	pet: Pet
 }
 
-export class GetPetService {
+export class GetPetUseCase {
 	constructor(private petsRepository: PetsRepository) {}
 
 	async execute({
 		id,
-	}: GetPetServiceRequest): Promise<GetPetServiceResponse> {
+	}: GetPetUseCaseRequest): Promise<GetPetUseCaseResponse> {
 		const pet = await this.petsRepository.findById({ id })
 
 		if (!pet) {

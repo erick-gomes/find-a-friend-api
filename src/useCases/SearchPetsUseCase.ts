@@ -1,7 +1,7 @@
 import type { PetsRepository } from '@/repositories/PetsRepository'
 import type { Org, Pet, Prisma } from '@prisma/client'
 
-interface SearchPetsServiceRequest
+interface SearchPetsUseCaseRequest
 	extends Omit<
 		Prisma.PetUncheckedCreateInput,
 		'id' | 'ownerId' | 'name' | 'description'
@@ -9,11 +9,11 @@ interface SearchPetsServiceRequest
 	city: Org['city']
 }
 
-interface SearchPetsServiceResponse {
+interface SearchPetsUseCaseResponse {
 	pets: Pet[]
 }
 
-export class SearchPetsService {
+export class SearchPetsUseCase {
 	constructor(private petsRepository: PetsRepository) {}
 
 	async execute({
@@ -22,7 +22,7 @@ export class SearchPetsService {
 		breed,
 		color,
 		size,
-	}: SearchPetsServiceRequest): Promise<SearchPetsServiceResponse> {
+	}: SearchPetsUseCaseRequest): Promise<SearchPetsUseCaseResponse> {
 		const pets = await this.petsRepository.findAll({
 			city,
 			age,

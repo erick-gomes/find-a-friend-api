@@ -1,6 +1,6 @@
 import type { Pet, Prisma } from '@prisma/client'
 
-interface FindAllParams
+export interface FindAllParams
 	extends Partial<Omit<Pet, 'id' | 'ownerId' | 'name' | 'description'>> {
 	city: string
 }

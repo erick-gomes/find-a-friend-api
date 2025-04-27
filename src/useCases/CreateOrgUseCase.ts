@@ -3,13 +3,13 @@ import { OrgAlreadyExistsError } from '@/useCases/errors/OrgAlreadyExistsError'
 import type { Org, Prisma } from '@prisma/client'
 import { hash } from 'bcrypt'
 
-interface CreateOrgServiceRequest
+interface CreateOrgUseCaseRequest
 	extends Omit<Prisma.OrgUncheckedCreateInput, 'id' | 'pets'> {}
-interface CreateOrgServiceResponse {
+interface CreateOrgUseCaseResponse {
 	org: Org
 }
 
-export class CreateOrgService {
+export class CreateOrgUseCase {
 	constructor(private orgsRepository: OrgsRepository) {}
 
 	async execute({
@@ -23,7 +23,7 @@ export class CreateOrgService {
 		city,
 		neighborhood,
 		state,
-	}: CreateOrgServiceRequest): Promise<CreateOrgServiceResponse> {
+	}: CreateOrgUseCaseRequest): Promise<CreateOrgUseCaseResponse> {
 		const orgExists = await this.orgsRepository.findByEmail({ email })
 
 		if (orgExists) {
