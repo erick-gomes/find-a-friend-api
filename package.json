@@ -10,7 +10,8 @@
     "dev": "tsx watch src/server.ts",
     "build": "tsup src/server.ts --out-dir build",
     "start": "node build/server.js",
-    "test:units": "vitest run --dir src/useCases"
+    "test:units": "vitest run --dir src/useCases",
+    "test:units:watch": "vitest watch --dir src/useCases"
   },
   "repository": {
     "type": "git",

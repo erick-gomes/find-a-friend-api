@@ -34,7 +34,7 @@ describe('AuthenticateOrg UseCase', () => {
 		expect(authenticatedOrg).toEqual(org)
 	})
 	it('should not be able to authenticate an organization with wrong email', async () => {
-		await expect(() =>
+		await expect(
 			systemUnderTest.execute({
 				email: 'wrong.email@example.com',
 				password: '12345678',
@@ -42,7 +42,7 @@ describe('AuthenticateOrg UseCase', () => {
 		).rejects.toBeInstanceOf(InvalidCredentialsError)
 	})
 	it('should not be able to authenticate an organization with wrong password', async () => {
-		await expect(() =>
+		await expect(
 			systemUnderTest.execute({
 				email: 'john.doe@example.com',
 				password: 'wrongpassword',

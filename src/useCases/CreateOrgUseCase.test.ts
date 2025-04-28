@@ -45,7 +45,7 @@ describe('CreateOrg UseCase', () => {
 			cep: '90001',
 			address: '123 Main St',
 		})
-		await expect(() =>
+		await expect(
 			systemUnderTest.execute({
 				name: 'Another Shelter',
 				owner_name: 'Jane Doe',
