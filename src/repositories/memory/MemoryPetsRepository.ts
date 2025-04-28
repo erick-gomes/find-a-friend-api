@@ -6,8 +6,8 @@ import type { Prisma, Pet, Org } from '@prisma/client'
 import { randomUUID } from 'node:crypto'
 
 export class MemoryPetsRepository implements PetsRepository {
-	private pets: Pet[] = []
-	private orgs: Org[] = []
+	public pets: Pet[] = []
+	public orgs: Org[] = []
 	async create(data: Prisma.PetUncheckedCreateInput): Promise<Pet> {
 		const newPet: Pet = { ...data, id: randomUUID() }
 		this.pets.push(newPet)

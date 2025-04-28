@@ -28,7 +28,7 @@ describe('AuthenticateOrg UseCase', () => {
 
 		const { org: authenticatedOrg } = await systemUnderTest.execute({
 			email: org.email,
-			password: password,
+			password,
 		})
 
 		expect(authenticatedOrg).toEqual(org)
