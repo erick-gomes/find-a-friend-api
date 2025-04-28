@@ -1,3 +1,4 @@
+import type { OrgsRepository } from '@/repositories/OrgsRepository'
 import type { PetsRepository } from '@/repositories/PetsRepository'
 import { OrgNotFoundError } from '@/useCases/errors/OrgNotFoundError'
 import type { Pet, Prisma } from '@prisma/client'
@@ -9,7 +10,10 @@ interface CreatePetUseCaseResponse {
 }
 
 export class CreatePetUseCase {
-	constructor(private petsRepository: PetsRepository) {}
+	constructor(
+		private petsRepository: PetsRepository,
+		private orgsRepository: OrgsRepository,
+	) {}
 
 	async execute({
 		ownerId,
@@ -20,7 +24,7 @@ export class CreatePetUseCase {
 		color,
 		size,
 	}: CreatePetUseCaseRequest): Promise<CreatePetUseCaseResponse> {
-		const org = await this.petsRepository.findById({
+		const org = await this.orgsRepository.findById({
 			id: ownerId,
 		})
 		if (!org) {
