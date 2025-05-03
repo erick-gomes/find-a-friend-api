@@ -2,9 +2,11 @@ import type { PetsRepository } from '@/repositories/PetsRepository'
 import type { Org, Pet, Prisma } from '@prisma/client'
 
 interface SearchPetsUseCaseRequest
-	extends Omit<
-		Prisma.PetUncheckedCreateInput,
-		'id' | 'ownerId' | 'name' | 'description'
+	extends Partial<
+		Omit<
+			Prisma.PetUncheckedCreateInput,
+			'id' | 'ownerId' | 'name' | 'description'
+		>
 	> {
 	city: Org['city']
 }

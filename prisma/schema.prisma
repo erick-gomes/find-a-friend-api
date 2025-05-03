@@ -13,7 +13,7 @@ model Pet {
   ownerId     String
   name        String
   description String
-  age         Int
+  age         String
   breed       String
   color       String
   size        String
