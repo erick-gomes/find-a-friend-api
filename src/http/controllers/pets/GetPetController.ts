@@ -7,7 +7,10 @@ const paramsSchema = z.object({
 	id: z.string(),
 })
 
-export const getPet = async (request: FastifyRequest, reply: FastifyReply) => {
+export const getPetController = async (
+	request: FastifyRequest,
+	reply: FastifyReply,
+) => {
 	const body = paramsSchema.parse(request.params)
 	const getPetUseCase = makeGetPetUseCase()
 

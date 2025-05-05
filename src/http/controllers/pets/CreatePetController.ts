@@ -13,7 +13,7 @@ const bodySchema = z.object({
 	ownerId: z.string(),
 })
 
-export const createPet = async (
+export const createPetController = async (
 	request: FastifyRequest,
 	reply: FastifyReply,
 ) => {

@@ -11,7 +11,7 @@ const querySchema = z.object({
 	breed: z.string().optional(),
 })
 
-export const searchPets = async (
+export const searchPetsController = async (
 	request: FastifyRequest,
 	reply: FastifyReply,
 ) => {
