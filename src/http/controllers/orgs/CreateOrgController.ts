@@ -16,7 +16,7 @@ const bodySchema = z.object({
 	state: z.string(),
 })
 
-export const createOrg = async (
+export const createOrgController = async (
 	request: FastifyRequest,
 	reply: FastifyReply,
 ) => {

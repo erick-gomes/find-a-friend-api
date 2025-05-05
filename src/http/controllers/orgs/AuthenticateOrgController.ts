@@ -7,7 +7,7 @@ const bodySchema = z.object({
 	email: z.string(),
 	password: z.string(),
 })
-export const authenticateOrg = async (
+export const authenticateOrgController = async (
 	request: FastifyRequest,
 	reply: FastifyReply,
 ) => {

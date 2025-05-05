@@ -7,7 +7,10 @@ const bodySchema = z.object({
 	id: z.string(),
 })
 
-export const getOrg = async (request: FastifyRequest, reply: FastifyReply) => {
+export const getOrgController = async (
+	request: FastifyRequest,
+	reply: FastifyReply,
+) => {
 	const body = bodySchema.parse(request.body)
 	const getOrgUseCase = makeGetOrgUseCase()
 
