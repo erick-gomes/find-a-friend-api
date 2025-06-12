@@ -15,10 +15,10 @@ export const searchPetsController = async (
 	request: FastifyRequest,
 	reply: FastifyReply,
 ) => {
-	const query = querySchema.parse(request.query)
-	const searchPetsUseCase = makeSearchPetsUseCase()
-
 	try {
+		const query = querySchema.parse(request.query)
+		const searchPetsUseCase = makeSearchPetsUseCase()
+
 		const { pets } = await searchPetsUseCase.execute(query)
 		reply.status(200).send({ pets })
 	} catch (error) {

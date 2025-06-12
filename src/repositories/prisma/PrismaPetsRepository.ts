@@ -19,7 +19,18 @@ export class PrismaPetsRepository implements PetsRepository {
 	}
 	findAll(params: FindAllParams): Promise<Pet[]> {
 		return this.prisma.pet.findMany({
-			where: { ...params },
+			where: {
+				age: params.age,
+				breed: params.breed,
+				color: params.color,
+				size: params.size,
+				owner: {
+					city: {
+						contains: params.city,
+						mode: 'insensitive',
+					}
+				}
+			},
 		})
 	}
 }
